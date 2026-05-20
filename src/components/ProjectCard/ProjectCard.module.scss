@@ -16,25 +16,7 @@
     .image {
       transform: scale(1.05);
     }
-
-    .link {
-      color: var.$color-accent-teal;
-
-      svg {
-        transform: translate(2px, -2px);
-      }
-    }
   }
-}
-
-.cardOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  cursor: pointer;
 }
 
 .imageContainer {
@@ -149,8 +131,6 @@
   color: var.$color-text-secondary;
   transition: var.$transition-fast;
   @include mix.flex(center, center, row, var.$spacing-1);
-  position: relative;
-  z-index: 2;
 
   svg {
     width: 16px;
@@ -172,8 +152,6 @@
   transition: var.$transition-fast;
   @include mix.flex(center, center);
   margin-left: auto;
-  position: relative;
-  z-index: 2;
 
   svg {
     width: 18px;

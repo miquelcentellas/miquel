@@ -2,13 +2,19 @@ import React from 'react'
 import styles from './ProjectCard.module.scss'
 
 export default function ProjectCard({ project }) {
-  const { id, title, category, description, tags, link, github, image, year } = project
+  const { id, title, category, description, tags, link, github, image, year, imagePosition } = project
 
   return (
     <article className={styles.card}>
       <a href={`/project.html?id=${id}`} className={styles.cardOverlay} aria-label={`View ${title}`} />
       <div className={styles.imageContainer}>
-        <img src={image} alt={title} className={styles.image} loading="lazy" />
+        <img
+          src={image}
+          alt={title}
+          className={styles.image}
+          loading="lazy"
+          style={imagePosition ? { objectPosition: imagePosition } : undefined}
+        />
         <span className={`${styles.badge} ${styles[category]}`}>
           {category}
         </span>
@@ -19,7 +25,7 @@ export default function ProjectCard({ project }) {
         <div className={styles.info}>
           <h3 className={styles.title}>{title}</h3>
           <p className={styles.description}>{description}</p>
-          
+
           <div className={styles.tags}>
             {tags.map((tag, idx) => (
               <span key={idx} className={styles.tag}>
@@ -31,7 +37,7 @@ export default function ProjectCard({ project }) {
 
         <div className={styles.footer}>
           <div className={styles.links}>
-            <a 
+            <a
               href={`/project.html?id=${id}`}
               className={styles.link}
             >
@@ -42,10 +48,10 @@ export default function ProjectCard({ project }) {
             </a>
 
             {github && (
-              <a 
-                href={github} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.githubLink}
                 aria-label="GitHub Repository"
               >

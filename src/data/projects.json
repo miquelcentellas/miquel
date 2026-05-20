@@ -4,7 +4,13 @@
     "title": "Aura Commerce Platform",
     "category": "development",
     "description": "A high-performance, headless e-commerce store built with Next.js, GraphQL, and Stripe, utilizing edge-caching for sub-50ms page speeds.",
-    "tags": ["React", "Next.js", "GraphQL", "Stripe", "Sass Modules"],
+    "tags": [
+      "React",
+      "Next.js",
+      "GraphQL",
+      "Stripe",
+      "Sass Modules"
+    ],
     "link": "https://aura-commerce.demo",
     "github": "https://github.com/miquelcentellas/aura-commerce",
     "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop",
@@ -16,7 +22,13 @@
     "title": "Helios Design System",
     "category": "design",
     "description": "A comprehensive brand identity and cross-platform UI kit focused on accessible, fluid design components, built on an organic geometric scale.",
-    "tags": ["Figma", "Design Systems", "UI/UX", "Brand Guidelines", "Accessibility"],
+    "tags": [
+      "Figma",
+      "Design Systems",
+      "UI/UX",
+      "Brand Guidelines",
+      "Accessibility"
+    ],
     "link": "https://figma.com/file/helios-system",
     "image": "https://images.unsplash.com/photo-1561070791-26c113006238?q=80&w=600&auto=format&fit=crop",
     "featured": true,
@@ -27,7 +39,13 @@
     "title": "Nova Crypto Dashboard",
     "category": "development",
     "description": "Real-time cryptocurrency analytics terminal integrating WebSockets, dynamic canvas charting, and customized multi-currency alert engines.",
-    "tags": ["React", "WebSockets", "Chart.js", "Context API", "Sass"],
+    "tags": [
+      "React",
+      "WebSockets",
+      "Chart.js",
+      "Context API",
+      "Sass"
+    ],
     "link": "https://nova-dashboard.demo",
     "github": "https://github.com/miquelcentellas/nova-dashboard",
     "image": "https://images.unsplash.com/photo-1621761191319-c6fb62004040?q=80&w=600&auto=format&fit=crop",
@@ -39,7 +57,13 @@
     "title": "Vapor Cyberpunk App Style",
     "category": "design",
     "description": "Visual design exploration for a cyberpunk roleplaying mobile companion application, utilizing glowing neon micro-interactions and dark skeuomorphism.",
-    "tags": ["Figma", "UI Design", "Visual Concept", "Micro-animations", "Prototyping"],
+    "tags": [
+      "Figma",
+      "UI Design",
+      "Visual Concept",
+      "Micro-animations",
+      "Prototyping"
+    ],
     "link": "https://behance.net/gallery/vapor-style",
     "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600&auto=format&fit=crop",
     "featured": false,
@@ -50,7 +74,13 @@
     "title": "Chronos Productivity Engine",
     "category": "development",
     "description": "A developer-focused keyboard-driven time tracking app with custom local SQLite database syncing and offline-first PWA sync strategies.",
-    "tags": ["React", "PWA", "IndexedDB", "Sass Modules", "Vite"],
+    "tags": [
+      "React",
+      "PWA",
+      "IndexedDB",
+      "Sass Modules",
+      "Vite"
+    ],
     "link": "https://chronos-engine.demo",
     "github": "https://github.com/miquelcentellas/chronos",
     "image": "https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?q=80&w=600&auto=format&fit=crop",
@@ -61,10 +91,17 @@
     "id": "6",
     "title": "Callygrapher Web",
     "category": "design",
-    "description": "A carefully dedicated website for the subtle art of handwriting.",
-    "tags": ["Paper", "Pen", "Ink", "Art"],
+    "description": "A carefully dedicated website for the subtle art of handwriting. Miquel Centellas has developed the art of handwritting, no only in paper, but also wood or even skin.",
+    "tags": [
+      "Paper",
+      "Pen",
+      "Ink",
+      "Art"
+    ],
     "link": "https://miquelcentellas.wixsite.com/caligrafo",
     "image": "/callygrapher.jpg",
+    "imagePosition": "center",
+    "imageScale": "1.5",
     "featured": false,
     "year": "2016"
   }
