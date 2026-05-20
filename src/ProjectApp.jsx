@@ -32,7 +32,7 @@ export default function ProjectApp() {
             </div>
             
             <div className={styles.cardWrapper}>
-              <ProjectCard project={project} />
+              <ProjectCard project={project} isShowcase={true} />
             </div>
           </>
         ) : (

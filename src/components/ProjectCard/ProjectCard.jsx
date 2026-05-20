@@ -1,19 +1,24 @@
 import React from 'react'
 import styles from './ProjectCard.module.scss'
 
-export default function ProjectCard({ project }) {
-  const { id, title, category, description, tags, link, github, image, year, imagePosition } = project
+export default function ProjectCard({ project, isShowcase = false }) {
+  const { id, title, category, description, tags, link, github, image, year, imagePosition, imageScale } = project
+
+  const imgStyle = {
+    '--img-position': imagePosition || 'center',
+    '--img-scale': imageScale || '1'
+  }
 
   return (
     <article className={styles.card}>
       <a href={`/project.html?id=${id}`} className={styles.cardOverlay} aria-label={`View ${title}`} />
-      <div className={styles.imageContainer}>
+      <div className={`${styles.imageContainer} ${isShowcase ? styles.showcaseImage : ''}`}>
         <img
           src={image}
           alt={title}
           className={styles.image}
           loading="lazy"
-          style={imagePosition ? { objectPosition: imagePosition } : undefined}
+          style={imgStyle}
         />
         <span className={`${styles.badge} ${styles[category]}`}>
           {category}
