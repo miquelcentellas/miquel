@@ -1,0 +1,66 @@
+.container {
+  padding: var.$spacing-12 var.$spacing-8;
+  max-width: 800px;
+  margin: 0 auto;
+  @include mix.flex(flex-start, stretch, column, var.$spacing-8);
+}
+
+.backBtn {
+  @include mix.flex(flex-start, center, row, var.$spacing-2);
+  color: var.$color-accent-teal;
+  font-size: var.$font-size-sm;
+  font-weight: 600;
+  transition: var.$transition-fast;
+  width: max-content;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover {
+    color: var.$color-text-primary;
+    
+    svg {
+      transform: translateX(-4px);
+    }
+  }
+}
+
+.cardWrapper {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.intro {
+  @include mix.flex(center, center, column, var.$spacing-2);
+  text-align: center;
+  margin-bottom: var.$spacing-2;
+  
+  h2 {
+    font-size: var.$font-size-3xl;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, var.$color-text-primary, var.$color-accent-teal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  p {
+    color: var.$color-text-secondary;
+    font-size: var.$font-size-base;
+  }
+}
+
+.errorState {
+  @include mix.flex(center, center, column, var.$spacing-4);
+  padding: var.$spacing-16 0;
+  color: var.$color-text-secondary;
+  
+  h3 {
+    color: var.$color-text-primary;
+    font-size: var.$font-size-2xl;
+  }
+}

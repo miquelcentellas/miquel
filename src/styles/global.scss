@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var.$color-bg-primary;
+  color: var.$color-text-primary;
+  font-family: var.$font-sans;
+  font-size: var.$font-size-base;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code,
+pre {
+  font-family: var.$font-mono;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var.$color-bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var.$color-border;
+  border-radius: var.$radius-full;
+  transition: var.$transition-fast;
+
+  &:hover {
+    background: var.$color-accent-teal;
+  }
+}

@@ -1,0 +1,76 @@
+.header {
+  @include mix.flex(space-between, center);
+  @include mix.glass(0.6, 16px, 0.08);
+  padding: var.$spacing-4 var.$spacing-8;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var.$color-border;
+}
+
+.logo {
+  font-family: var.$font-sans;
+  font-size: var.$font-size-xl;
+  font-weight: 800;
+  color: var.$color-text-primary;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+  @include mix.flex(center, center, row, var.$spacing-2);
+
+  span {
+    color: var.$color-accent-teal;
+    background: linear-gradient(135deg, var.$color-accent-teal, var.$color-accent-violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.nav {
+  @include mix.flex(center, center, row, var.$spacing-6);
+}
+
+.navLink {
+  font-size: var.$font-size-xl;
+  font-weight: 500;
+  color: var.$color-text-secondary;
+  transition: var.$transition-fast;
+  position: relative;
+  padding: var.$spacing-2 0;
+
+  &:hover {
+    color: var.$color-accent-teal;
+  }
+
+  &.active {
+    color: var.$color-text-primary;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var.$color-accent-teal, var.$color-accent-violet);
+      border-radius: var.$radius-full;
+    }
+  }
+}
+
+.cta {
+  background: linear-gradient(135deg, var.$color-bg-tertiary, var.$color-border);
+  color: var.$color-accent-teal;
+  border: 1px solid var.$color-border;
+  padding: var.$spacing-2 var.$spacing-4;
+  border-radius: var.$radius-md;
+  font-size: var.$font-size-sm;
+  font-weight: 600;
+  transition: var.$transition-normal;
+
+  &:hover {
+    background: var.$color-accent-teal;
+    color: var.$color-bg-primary;
+    box-shadow: var.$shadow-glow;
+    transform: translateY(-2px);
+  }
+}

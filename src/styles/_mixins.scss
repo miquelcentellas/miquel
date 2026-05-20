@@ -1,0 +1,76 @@
+@use "sass:map";
+
+// Flexbox & Grid layouts
+@mixin flex($justify: center, $align: center, $direction: row, $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+@mixin grid($cols: 1, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat($cols, minmax(0, 1fr));
+  gap: $gap;
+}
+
+// Media Queries for Responsive Design
+$breakpoints: (
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
+  '2xl': 1536px
+);
+
+@mixin respond-to($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$breakpoint}.";
+  }
+}
+
+// Modern Glassmorphism effect
+@mixin glass($bg-opacity: 0.4, $blur: 12px, $border-opacity: 0.1) {
+  background: rgba(19, 27, 46, $bg-opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid rgba(255, 255, 255, $border-opacity);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+// Glow effect on hover
+@mixin glow-hover($color: #64ffda, $intensity: 0.3) {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    box-shadow: 0 0 20px rgba($color, $intensity);
+    border-color: $color;
+  }
+}
+
+// Truncate text with ellipsis
+@mixin truncate($lines: 1) {
+  @if $lines == 1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// Centered absolute element
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
