@@ -56,5 +56,16 @@
     "image": "https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?q=80&w=600&auto=format&fit=crop",
     "featured": true,
     "year": "2026"
+  },
+  {
+    "id": "6",
+    "title": "Callygrapher Web",
+    "category": "design",
+    "description": "A carefully dedicated website for the subtle art of handwriting.",
+    "tags": ["Paper", "Pen", "Ink", "Art"],
+    "link": "https://miquelcentellas.wixsite.com/caligrafo",
+    "image": "/callygrapher.jpg",
+    "featured": false,
+    "year": "2016"
   }
 ]
