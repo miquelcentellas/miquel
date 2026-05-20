@@ -10,10 +10,10 @@
 
 .logo {
   font-family: var.$font-sans;
-  font-size: var.$font-size-xl;
+  font-size: var.$font-size-2xl;
   font-weight: 800;
   color: var.$color-text-primary;
-  letter-spacing: -0.5px;
+  letter-spacing: 0.5px;
   cursor: pointer;
   @include mix.flex(center, center, row, var.$spacing-2);
 
