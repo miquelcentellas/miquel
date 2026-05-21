@@ -1,25 +1,64 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './ProjectCard.module.scss'
 
 export default function ProjectCard({ project, isShowcase = false }) {
-  const { id, title, category, description, tags, link, github, image, year, imagePosition, imageScale } = project
+  const { id, title, category, description, tags, link, github, image, images, year, imagePosition, imageScale } = project
+  const [currentImgIdx, setCurrentImgIdx] = useState(0)
+
+  const carouselImages = images && images.length > 0 ? images : [image]
 
   const imgStyle = {
     '--img-position': imagePosition || 'center',
     '--img-scale': imageScale || '1'
   }
 
+  const handlePrev = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setCurrentImgIdx((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1))
+  }
+
+  const handleNext = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setCurrentImgIdx((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1))
+  }
+
   return (
     <article className={styles.card}>
       <a href={`/project.html?id=${id}`} className={styles.cardOverlay} aria-label={`View ${title}`} />
       <div className={`${styles.imageContainer} ${isShowcase ? styles.showcaseImage : ''}`}>
+        {isShowcase && carouselImages.length > 1 && (
+          <button className={`${styles.carouselBtn} ${styles.prevBtn}`} onClick={handlePrev} aria-label="Previous image">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+          </button>
+        )}
         <img
-          src={image}
-          alt={title}
+          src={carouselImages[currentImgIdx]}
+          alt={`${title} - image ${currentImgIdx + 1}`}
           className={styles.image}
           loading="lazy"
           style={imgStyle}
         />
+        {isShowcase && carouselImages.length > 1 && (
+          <button className={`${styles.carouselBtn} ${styles.nextBtn}`} onClick={handleNext} aria-label="Next image">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+          </button>
+        )}
+        {isShowcase && carouselImages.length > 1 && (
+          <div className={styles.carouselIndicators}>
+            {carouselImages.map((_, idx) => (
+              <span 
+                key={idx} 
+                className={`${styles.indicator} ${idx === currentImgIdx ? styles.active : ''}`}
+              />
+            ))}
+          </div>
+        )}
         <span className={`${styles.badge} ${styles[category]}`}>
           {category}
         </span>

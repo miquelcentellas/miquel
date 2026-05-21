@@ -14,23 +14,34 @@
     "link": "https://aura-commerce.demo",
     "github": "https://github.com/miquelcentellas/aura-commerce",
     "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop"
+    ],
     "featured": true,
     "year": "2026"
   },
   {
     "id": "2",
-    "title": "Helios Design System",
+    "title": "Wedding Invitation",
     "category": "design",
-    "description": "A comprehensive brand identity and cross-platform UI kit focused on accessible, fluid design components, built on an organic geometric scale.",
+    "description": "A wedding invitation for a couple named Desiré and Antonio. It's a simple and elegant design with a focus on calligraphy and handwriting.",
     "tags": [
-      "Figma",
-      "Design Systems",
-      "UI/UX",
-      "Brand Guidelines",
-      "Accessibility"
+      "Paper",
+      "Envelope",
+      "Ink",
+      "Calligraphy",
+      "Handwriting",
+      "Love"
     ],
-    "link": "https://figma.com/file/helios-system",
-    "image": "https://images.unsplash.com/photo-1561070791-26c113006238?q=80&w=600&auto=format&fit=crop",
+    "link": "",
+    "image": "/wedding-invitation-1.jpg",
+    "images": [
+      "/wedding-invitation-1.jpg",
+      "/wedding-invitation-2.jpg",
+      "/wedding-invitation-3.jpg"
+    ],
     "featured": true,
     "year": "2025"
   },
@@ -38,17 +49,23 @@
     "id": "3",
     "title": "Nova Crypto Dashboard",
     "category": "development",
-    "description": "Real-time cryptocurrency analytics terminal integrating WebSockets, dynamic canvas charting, and customized multi-currency alert engines.",
+    "description": "Landing prototype for a community Hub. For Artists, Creators, and Entrepenours. Keeping up the good vibes!",
     "tags": [
-      "React",
-      "WebSockets",
-      "Chart.js",
-      "Context API",
+      "HTML",
+      "CSS",
+      "JavaScript",
       "Sass"
     ],
     "link": "https://nova-dashboard.demo",
-    "github": "https://github.com/miquelcentellas/nova-dashboard",
-    "image": "https://images.unsplash.com/photo-1621761191319-c6fb62004040?q=80&w=600&auto=format&fit=crop",
+    "github": "https://miquelcentellas.github.io/entrega-2-header-gathsession/",
+    "image": "/gathsession-1.jpg",
+    "images": [
+      "/gathsession-1.jpg",
+      "/gathsession-2.jpg",
+      "/gathsession-3.jpg"
+    ],
+    "imagePosition": "center",
+    "imageScale": "",
     "featured": false,
     "year": "2025"
   },
@@ -100,6 +117,13 @@
     ],
     "link": "https://miquelcentellas.wixsite.com/caligrafo",
     "image": "/callygrapher.jpg",
+    "images": [
+      "/callygraphy-1.jpg",
+      "/callygraphy-2.jpg",
+      "/callygraphy-3.jpg",
+      "/callygraphy-4.jpg",
+      "/callygraphy-5.jpg"
+    ],
     "imagePosition": "center",
     "imageScale": "1.5",
     "featured": false,
