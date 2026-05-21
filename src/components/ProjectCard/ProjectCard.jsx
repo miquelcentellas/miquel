@@ -25,7 +25,7 @@ export default function ProjectCard({ project, isShowcase = false }) {
   }
 
   return (
-    <article className={styles.card}>
+    <article className={`${styles.card} ${styles[category]}`}>
       <a href={`/project.html?id=${id}`} className={styles.cardOverlay} aria-label={`View ${title}`} />
       <div className={`${styles.imageContainer} ${isShowcase ? styles.showcaseImage : ''}`}>
         {isShowcase && carouselImages.length > 1 && (
