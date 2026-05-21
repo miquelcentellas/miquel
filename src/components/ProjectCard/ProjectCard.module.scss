@@ -133,14 +133,14 @@
   z-index: 10;
 
   &.development {
-    background: rgba(139, 92, 246, 0.3);
-    color: var.$color-accent-violet;
+    background: rgba(139, 92, 246, 0.8);
+    color: var.$color-text-primary;
     border: 1px solid rgba(139, 92, 246, 0.4);
   }
 
   &.design {
-    background: rgba(100, 255, 218, 0.3);
-    color: var.$color-accent-teal;
+    background: rgba(100, 255, 218, 0.8);
+    color: var.$color-border;
     border: 1px solid rgba(100, 255, 218, 0.4);
   }
 }
