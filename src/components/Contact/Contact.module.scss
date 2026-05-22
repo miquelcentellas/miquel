@@ -1,0 +1,169 @@
+
+
+.container {
+  padding: var.$spacing-12 var.$spacing-8;
+  max-width: 1200px;
+  margin: 0 auto;
+  @include mix.flex(flex-start, stretch, column, var.$spacing-10);
+}
+
+.intro {
+  @include mix.flex(center, flex-start, column, var.$spacing-2);
+  
+  h2 {
+    font-size: var.$font-size-3xl;
+    font-weight: 800;
+    letter-spacing: -1px;
+    
+    span {
+      background-image: linear-gradient(135deg, var.$color-accent-teal, var.$color-accent-violet);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+  }
+
+  p {
+    color: var.$color-text-secondary;
+    font-size: var.$font-size-lg;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var.$spacing-12;
+
+  @include mix.respond-to('md') {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.profileColumn {
+  @include mix.flex(flex-start, stretch, column, var.$spacing-8);
+}
+
+.imageContainer {
+  width: 100%;
+  border-radius: var.$radius-xl;
+  overflow: hidden;
+  border: 1px solid var.$color-border;
+  @include mix.glass(0.4, 16px, 0.05);
+
+  .profileImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(20%) contrast(1.1);
+    transition: var.$transition-normal;
+
+    &:hover {
+      filter: grayscale(0) contrast(1);
+    }
+  }
+}
+
+.socials {
+  h3 {
+    font-size: var.$font-size-xl;
+    color: var.$color-text-primary;
+    margin-bottom: var.$spacing-4;
+  }
+
+  .links {
+    @include mix.flex(flex-start, flex-start, column, var.$spacing-3);
+    
+    a {
+      @include mix.flex(flex-start, center, row, var.$spacing-3);
+      color: var.$color-text-secondary;
+      text-decoration: none;
+      font-size: var.$font-size-base;
+      transition: var.$transition-fast;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        color: var.$color-accent-teal;
+        transition: var.$transition-fast;
+      }
+
+      &:hover {
+        color: var.$color-text-primary;
+        
+        svg {
+          transform: scale(1.1) translateY(-1px);
+          filter: drop-shadow(0 0 5px rgba(100, 255, 218, 0.3));
+        }
+      }
+    }
+  }
+}
+
+.formColumn {
+  @include mix.glass(0.3, 16px, 0.05);
+  border: 1px solid var.$color-border;
+  border-radius: var.$radius-xl;
+  padding: var.$spacing-8;
+}
+
+.form {
+  @include mix.flex(flex-start, stretch, column, var.$spacing-6);
+}
+
+.inputGroup {
+  @include mix.flex(flex-start, stretch, column, var.$spacing-2);
+
+  label {
+    color: var.$color-text-primary;
+    font-size: var.$font-size-sm;
+    font-weight: 500;
+  }
+
+  input, textarea {
+    background: rgba(var.$color-bg-primary, 0.5);
+    border: 1px solid var.$color-border;
+    border-radius: var.$radius-md;
+    padding: var.$spacing-3 var.$spacing-4;
+    color: var.$color-text-primary;
+    font-family: var.$font-sans;
+    font-size: var.$font-size-base;
+    transition: var.$transition-fast;
+
+    &::placeholder {
+      color: var.$color-text-muted;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var.$color-accent-teal;
+      box-shadow: var.$shadow-glow;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+.submitBtn {
+  margin-top: var.$spacing-2;
+  background: linear-gradient(135deg, var.$color-accent-teal, var.$color-accent-violet);
+  color: var.$color-bg-primary;
+  border: none;
+  border-radius: var.$radius-md;
+  padding: var.$spacing-3 var.$spacing-6;
+  font-size: var.$font-size-base;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var.$transition-normal;
+  align-self: flex-start;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var.$shadow-glow;
+    opacity: 0.9;
+  }
+}

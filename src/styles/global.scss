@@ -8,6 +8,10 @@
   padding: 0;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   background-color: var.$color-bg-primary;
   color: var.$color-text-primary;

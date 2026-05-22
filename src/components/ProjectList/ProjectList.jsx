@@ -2,11 +2,11 @@ import React from 'react'
 import ProjectCard from '../ProjectCard/ProjectCard'
 import styles from './ProjectList.module.scss'
 
-export default function ProjectList({ projects }) {
+export default function ProjectList({ projects, category = 'all' }) {
   return (
-    <section className={styles.container}>
+    <section className={`${styles.container} ${styles[category] || ''}`}>
       <div className={styles.intro}>
-        <h2>Selected Works</h2>
+        <h2><span>Selected Works</span></h2>
         <p>A curated collection of development projects and design explorations pushing boundaries.</p>
       </div>
 

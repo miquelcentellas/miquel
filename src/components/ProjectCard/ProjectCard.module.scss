@@ -10,19 +10,38 @@
 
   &:hover {
     transform: translateY(-8px);
+
+    // Default fallback (though cards should have a category)
     border-color: rgba(100, 255, 218, 0.6);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 30px rgba(100, 255, 218, 0.5);
 
     .image {
       transform: scale(calc(var(--img-scale, 1) * 1.05));
     }
+  }
+
+  &.development:hover {
+    border-color: rgba(139, 92, 246, 0.6);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 30px rgba(139, 92, 246, 0.7);
+
+    .link {
+      color: var.$color-accent-violet;
+    }
+  }
+
+  &.design:hover {
+    border-color: rgba(100, 255, 218, 0.6);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 30px rgba(100, 255, 218, 0.5);
 
     .link {
       color: var.$color-accent-teal;
+    }
+  }
 
-      svg {
-        transform: translate(2px, -2px);
-      }
+  // Common link hover effect setup for all categories
+  &:hover .link {
+    svg {
+      transform: translate(2px, -2px);
     }
   }
 }
@@ -200,11 +219,19 @@
 .tag {
   font-family: var.$font-mono;
   font-size: 11px;
-  color: var.$color-accent-violet;
+  color: var.$color-text-muted;
   background: rgba(35, 53, 84, 0.3);
   padding: 2px 8px;
   border-radius: var.$radius-sm;
   border: 1px solid rgba(35, 53, 84, 0.5);
+
+  .development & {
+    color: var.$color-accent-violet;
+  }
+
+  .design & {
+    color: var.$color-accent-teal;
+  }
 }
 
 .footer {
