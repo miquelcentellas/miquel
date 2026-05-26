@@ -20,8 +20,10 @@ export default function Header({ currentCategory, onCategoryChange }) {
         <span>Miquel Centellas</span>
       </div>
 
-      <button 
-        className={styles.mobileMenuBtn} 
+      <div className={styles.currentDevelopment}>  ¡ Website under current development !</div>
+
+      <button
+        className={styles.mobileMenuBtn}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         aria-label="Toggle menu"
       >

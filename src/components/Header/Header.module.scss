@@ -21,8 +21,17 @@
     color: var.$color-accent-teal;
     background: linear-gradient(135deg, var.$color-accent-teal, var.$color-accent-violet);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+}
+
+.currentDevelopment {
+  font-size: var.$font-size-base; 
+  font-weight: 900;
+  color: var.$color-text-secondary;
+  padding: var.$spacing-2;
+
 }
 
 .mobileMenuBtn {
