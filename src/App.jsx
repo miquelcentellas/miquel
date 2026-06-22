@@ -8,7 +8,8 @@ import initialProjects from './data/projects.json'
 export default function App() {
   const [category, setCategory] = useState(() => {
     const params = new URLSearchParams(window.location.search)
-    return params.get('category') || 'calligraphy'
+    const cat = params.get('category')
+    return cat === 'design' ? 'calligraphy' : (cat || 'calligraphy')
   })
 
   const filteredProjects = category === 'all'
