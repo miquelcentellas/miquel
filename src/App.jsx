@@ -8,7 +8,7 @@ import initialProjects from './data/projects.json'
 export default function App() {
   const [category, setCategory] = useState(() => {
     const params = new URLSearchParams(window.location.search)
-    return params.get('category') || 'all'
+    return params.get('category') || 'calligraphy'
   })
 
   const filteredProjects = category === 'all'
@@ -20,7 +20,7 @@ export default function App() {
       <Header currentCategory={category} onCategoryChange={setCategory} />
       <main>
         {category === 'about' ? (
-          <About />
+          <About onCategoryChange={setCategory} />
         ) : category === 'contact' ? (
           <Contact />
         ) : (

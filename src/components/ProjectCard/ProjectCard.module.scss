@@ -29,12 +29,12 @@
     }
   }
 
-  &.design:hover {
-    border-color: rgba(100, 255, 218, 0.6);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 30px rgba(100, 255, 218, 0.5);
+  &.calligraphy:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 
     .link {
-      color: var.$color-accent-teal;
+      color: #dfb15b;
     }
   }
 
@@ -164,10 +164,14 @@
     border: 1px solid rgba(139, 92, 246, 0.4);
   }
 
-  &.design {
-    background: rgba(100, 255, 218, 0.8);
-    color: var.$color-border;
-    border: 1px solid rgba(100, 255, 218, 0.4);
+  &.calligraphy {
+    background: #111625;
+    color: #dfb15b;
+    border: 1px solid rgba(223, 177, 91, 0.3);
+    font-family: 'Alegreya', serif;
+    text-transform: none;
+    font-style: italic;
+    letter-spacing: 0.5px;
   }
 }
 
@@ -196,8 +200,8 @@
 }
 
 .title {
-  font-family: var.$font-sans;
-  font-size: var.$font-size-lg;
+  font-family: 'Alegreya', serif;
+  font-size: var.$font-size-xl;
   font-weight: 700;
   color: var.$color-text-primary;
   line-height: 1.3;
@@ -229,8 +233,8 @@
     color: var.$color-accent-violet;
   }
 
-  .design & {
-    color: var.$color-accent-teal;
+  .calligraphy & {
+    color: #dfb15b;
   }
 }
 
@@ -285,5 +289,25 @@
 
   &:hover {
     color: var.$color-accent-violet;
+  }
+}
+
+// Minimal design overrides for Calligraphy cards to remove glassmorphism
+.card.calligraphy {
+  background: #0e1321;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .tag {
+    color: var.$color-text-secondary;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
   }
 }

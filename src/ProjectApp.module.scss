@@ -65,3 +65,22 @@
     font-size: var.$font-size-2xl;
   }
 }
+
+:global(.calligraphy) {
+  .intro h2 {
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    -webkit-text-fill-color: initial;
+    color: var.$color-text-primary;
+    font-family: 'Alegreya', serif;
+  }
+
+  .backBtn {
+    color: var.$color-text-secondary;
+    
+    &:hover {
+      color: #dfb15b;
+    }
+  }
+}

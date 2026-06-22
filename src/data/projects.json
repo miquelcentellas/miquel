@@ -25,7 +25,7 @@
   {
     "id": "2",
     "title": "Wedding Invitation",
-    "category": "design",
+    "category": "calligraphy",
     "description": "A wedding invitation for a couple named Desiré and Antonio. It's a simple and elegant design with a focus on calligraphy and handwriting.",
     "tags": [
       "Paper",
@@ -72,11 +72,11 @@
   {
     "id": "4",
     "title": "Vapor Cyberpunk App Style",
-    "category": "design",
+    "category": "calligraphy",
     "description": "Visual design exploration for a cyberpunk roleplaying mobile companion application, utilizing glowing neon micro-interactions and dark skeuomorphism.",
     "tags": [
       "Figma",
-      "UI Design",
+      "Calligraphy",
       "Visual Concept",
       "Micro-animations",
       "Prototyping"
@@ -107,13 +107,13 @@
   {
     "id": "6",
     "title": "Callygraphy Art",
-    "category": "design",
+    "category": "calligraphy",
     "description": "A carefully dedicated website for the subtle art of handwriting. Miquel Centellas has developed the art of handwritting, no only in paper, but also wood or even skin.",
     "tags": [
       "Paper",
       "Pen",
       "Ink",
-      "Art"
+      "Calligraphy"
     ],
     "link": "https://miquelcentellas.wixsite.com/caligrafo",
     "image": "/callygrapher.jpg",

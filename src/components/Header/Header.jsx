@@ -16,7 +16,7 @@ export default function Header({ currentCategory, onCategoryChange }) {
 
   return (
     <header className={styles.header}>
-      <div className={styles.logo} onClick={() => handleCategoryClick('all')}>
+      <div className={styles.logo} onClick={() => handleCategoryClick('calligraphy')}>
         <span>Miquel Centellas</span>
       </div>
 
@@ -34,22 +34,10 @@ export default function Header({ currentCategory, onCategoryChange }) {
 
       <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`}>
         <button
-          className={`${styles.navLink} ${currentCategory === 'all' ? styles.active : ''}`}
-          onClick={() => handleCategoryClick('all')}
+          className={`${styles.navLink} ${currentCategory === 'calligraphy' ? styles.active : ''}`}
+          onClick={() => handleCategoryClick('calligraphy')}
         >
-          All
-        </button>
-        <button
-          className={`${styles.navLink} ${currentCategory === 'development' ? styles.active : ''}`}
-          onClick={() => handleCategoryClick('development')}
-        >
-          Development
-        </button>
-        <button
-          className={`${styles.navLink} ${currentCategory === 'design' ? styles.active : ''}`}
-          onClick={() => handleCategoryClick('design')}
-        >
-          Design
+          Calligraphy
         </button>
         <button
           className={`${styles.navLink} ${currentCategory === 'about' ? styles.active : ''}`}

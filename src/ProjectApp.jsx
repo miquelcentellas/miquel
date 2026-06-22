@@ -11,13 +11,13 @@ export default function ProjectApp() {
   const project = initialProjects.find(p => p.id === id)
 
   return (
-    <div>
+    <div className={project ? project.category : ''}>
       <Header 
         currentCategory={project ? project.category : 'all'} 
         onCategoryChange={() => {}} 
       />
       <main className={styles.container}>
-        <a href="/index.html" className={styles.backBtn}>
+        <a href={`/index.html?category=${project ? project.category : 'calligraphy'}`} className={styles.backBtn}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
           </svg>
