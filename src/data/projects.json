@@ -71,23 +71,6 @@
   },
   {
     "id": "4",
-    "title": "Vapor Cyberpunk App Style",
-    "category": "calligraphy",
-    "description": "Visual design exploration for a cyberpunk roleplaying mobile companion application, utilizing glowing neon micro-interactions and dark skeuomorphism.",
-    "tags": [
-      "Figma",
-      "Calligraphy",
-      "Visual Concept",
-      "Micro-animations",
-      "Prototyping"
-    ],
-    "link": "https://behance.net/gallery/vapor-style",
-    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600&auto=format&fit=crop",
-    "featured": false,
-    "year": "2026"
-  },
-  {
-    "id": "5",
     "title": "Chronos Productivity Engine",
     "category": "development",
     "description": "A developer-focused keyboard-driven time tracking app with custom local SQLite database syncing and offline-first PWA sync strategies.",
@@ -105,7 +88,7 @@
     "year": "2026"
   },
   {
-    "id": "6",
+    "id": "5",
     "title": "Callygraphy Art",
     "category": "calligraphy",
     "description": "A carefully dedicated website for the subtle art of handwriting. Miquel Centellas has developed the art of handwritting, no only in paper, but also wood or even skin.",
