@@ -14,11 +14,12 @@ h1, h2, h3, h4, h5, h6, .font-serif {
 
 html {
   overflow-y: scroll;
+  cursor: url('/ink-stain-cursor.svg') 21 21, auto;
 }
 
 body {
-  background-color: var.$color-bg-primary;
-  color: var.$color-text-primary;
+  background-color: var.$color-bg-paper;
+  color: var.$color-text-nogalina;
   font-family: var.$font-sans;
   font-size: var.$font-size-base;
   line-height: 1.6;
@@ -26,6 +27,13 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+// Custom pointer cursor for all interactive workshop elements
+a, button, [role="button"], input[type="submit"], input[type="button"], select,
+[class*="Btn"], [class*="Link"], [class*="cardOverlay"], [class*="logo"], 
+[class*="indicator"], [class*="carouselBtn"], [class*="backBtn"] {
+  cursor: url('/ink-stain-pointer.svg') 21 21, pointer !important;
 }
 
 code,
@@ -51,15 +59,57 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background: var.$color-bg-primary;
+  background: var.$color-bg-paper;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var.$color-border;
+  background: rgba(var.$color-text-sepia, 0.15);
   border-radius: var.$radius-full;
-  transition: var.$transition-fast;
+  transition: background-color 0.15s var.$ease-out;
 
   &:hover {
-    background: var.$color-accent-teal;
+    background: var.$color-text-sepia;
+  }
+}
+
+// Global page/view entry transition
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  animation: fadeInUp 0.4s var.$ease-out forwards;
+}
+
+// Global Accessibility for Motion
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+
+  .fadeInUp {
+    animation: fadeInOnly 0.2s ease forwards !important;
+  }
+}
+
+@keyframes fadeInOnly {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

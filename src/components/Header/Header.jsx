@@ -1,12 +1,36 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styles from './Header.module.scss'
+
+const LOGOS = [
+  { id: 'copperplate', src: '/miquel-copperplate.svg', alt: 'Miquel Centellas - Copperplate' },
+  { id: 'carolina', src: '/miquel-carolina.svg', alt: 'Miquel Centellas - Carolina' },
+  { id: 'gotica', src: '/miquel-gotica.svg', alt: 'Miquel Centellas - Gótica' }
+]
+
+const getDifferentRandomLogo = (currentId) => {
+  const availableLogos = currentId ? LOGOS.filter(l => l.id !== currentId) : LOGOS
+  return availableLogos[Math.floor(Math.random() * availableLogos.length)]
+}
 
 export default function Header({ currentCategory, onCategoryChange }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [logo, setLogo] = useState(() => LOGOS[Math.floor(Math.random() * LOGOS.length)])
   const isSecondaryPage = window.location.pathname.includes('project.html')
+  const isFirstRender = useRef(true)
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+    setLogo(prevLogo => getDifferentRandomLogo(prevLogo.id))
+  }, [currentCategory])
 
   const handleCategoryClick = (category) => {
     setIsMenuOpen(false)
+    if (category === currentCategory) {
+      setLogo(prevLogo => getDifferentRandomLogo(prevLogo.id))
+    }
     if (isSecondaryPage) {
       window.location.href = `/index.html?category=${category}`
     } else {
@@ -14,11 +38,24 @@ export default function Header({ currentCategory, onCategoryChange }) {
     }
   }
 
+  const handleLogoClick = () => {
+    handleCategoryClick('calligraphy')
+  }
+
+
   return (
     <header className={styles.header}>
-      <div className={styles.logo} onClick={() => handleCategoryClick('calligraphy')}>
-        <span>Miquel Centellas</span>
+      <div className={styles.logo} onClick={handleLogoClick} aria-label="Miquel Centellas Logo">
+        <img
+          key={logo.id}
+          src={logo.src}
+          alt={logo.alt}
+          className={styles.logoImg}
+        />
       </div>
+
+
+
 
       <div className={styles.currentDevelopment}>  ¡ Website under current development !</div>
 

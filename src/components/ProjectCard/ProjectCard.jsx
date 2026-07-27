@@ -36,6 +36,7 @@ export default function ProjectCard({ project, isShowcase = false }) {
           </button>
         )}
         <img
+          key={currentImgIdx}
           src={carouselImages[currentImgIdx]}
           alt={`${title} - image ${currentImgIdx + 1}`}
           className={styles.image}

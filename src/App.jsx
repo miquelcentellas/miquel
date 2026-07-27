@@ -3,6 +3,7 @@ import Header from './components/Header/Header'
 import ProjectList from './components/ProjectList/ProjectList'
 import About from './components/About/About'
 import Contact from './components/Contact/Contact'
+import Hero from './components/Hero/Hero'
 import initialProjects from './data/projects.json'
 
 export default function App() {
@@ -19,13 +20,16 @@ export default function App() {
   return (
     <div>
       <Header currentCategory={category} onCategoryChange={setCategory} />
-      <main>
+      <main className="fadeInUp" key={category}>
         {category === 'about' ? (
           <About onCategoryChange={setCategory} />
         ) : category === 'contact' ? (
           <Contact />
         ) : (
-          <ProjectList projects={filteredProjects} category={category} />
+          <>
+            {category === 'calligraphy' && <Hero />}
+            <ProjectList projects={filteredProjects} category={category} />
+          </>
         )}
       </main>
     </div>

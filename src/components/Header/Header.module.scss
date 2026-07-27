@@ -5,38 +5,66 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid var.$color-border;
+  border-bottom: 1px solid rgba(var.$color-text-sepia, 0.15);
 }
 
 .logo {
-  font-family: 'Alegreya', serif;
-  font-size: var.$font-size-2xl;
-  font-weight: 800;
-  color: var.$color-text-primary;
-  letter-spacing: 0.5px;
   cursor: pointer;
-  @include mix.flex(center, center, row, var.$spacing-2);
+  @include mix.flex(center, center);
+  transition: filter 0.3s var.$ease-out, transform 0.3s var.$ease-out;
 
-  span {
-    color: var.$color-accent-teal;
-    background: linear-gradient(135deg, var.$color-accent-teal, var.$color-accent-violet);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      filter: drop-shadow(0 0 12px rgba(223, 177, 91, 0.5));
+      transform: translateY(-1px);
+    }
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.97);
+    transition: transform 0.1s var.$ease-out;
   }
 }
+
+.logoImg {
+  height: 76px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  animation: fadeInLogo 0.3s var.$ease-out forwards;
+
+  @include mix.respond-to('lg') {
+    height: 88px;
+  }
+}
+
+@keyframes fadeInLogo {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+
 
 .currentDevelopment {
   font-size: var.$font-size-base; 
   font-weight: 900;
-  color: var.$color-text-secondary;
+  color: var.$color-text-sepia;
   padding: var.$spacing-2;
 
 }
 
 .mobileMenuBtn {
   display: block;
-  color: var.$color-text-primary;
+  color: var.$color-text-nogalina;
   padding: var.$spacing-2;
   
   svg {
@@ -50,46 +78,64 @@
 }
 
 .nav {
-  display: none; // Hidden by default on mobile
+  @include mix.flex(center, center, column, var.$spacing-4);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var.$color-bg-paper;
+  padding: var.$spacing-6 var.$spacing-4;
+  border-bottom: 1px solid rgba(var.$color-text-sepia, 0.15);
+  box-shadow: var.$shadow-lg;
+  z-index: 99;
+  
+  // Transition wrapper for mobile menu open/close
+  opacity: 0;
+  transform: translateY(-8px) scale(0.98);
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.2s var.$ease-out, transform 0.2s var.$ease-out, visibility 0.2s var.$ease-out;
 
   &.open {
-    @include mix.flex(center, center, column, var.$spacing-4);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: var.$color-bg-primary;
-    padding: var.$spacing-6 var.$spacing-4;
-    border-bottom: 1px solid var.$color-border;
-    box-shadow: var.$shadow-lg;
-    z-index: 99;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    visibility: visible;
   }
 
   @include mix.respond-to('lg') {
     @include mix.flex(center, center, row, var.$spacing-6);
-    display: flex;
     position: static;
     background: transparent;
     padding: 0;
     border: none;
     box-shadow: none;
+    
+    // Reset mobile transitions on desktop
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    visibility: visible;
+    transition: none;
   }
 }
 
 .navLink {
   font-size: var.$font-size-xl;
   font-weight: 500;
-  color: var.$color-text-secondary;
-  transition: var.$transition-fast;
+  color: var.$color-text-sepia;
+  transition: color 0.15s var.$ease-out;
   position: relative;
   padding: var.$spacing-2 0;
 
-  &:hover {
-    color: var.$color-accent-teal;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var.$color-text-sepia;
+    }
   }
 
   &.active {
-    color: var.$color-text-primary;
+    color: var.$color-text-nogalina;
 
     &::after {
       content: '';
@@ -98,7 +144,7 @@
       left: 0;
       width: 100%;
       height: 2px;
-      background: linear-gradient(90deg, var.$color-accent-teal, var.$color-accent-violet);
+      background: linear-gradient(90deg, var.$color-text-sepia, var.$color-accent-cinnabar);
       border-radius: var.$radius-full;
     }
   }
@@ -109,20 +155,27 @@
   
   @include mix.respond-to('lg') {
     display: block;
-    background: linear-gradient(135deg, var.$color-bg-tertiary, var.$color-border);
-    color: var.$color-accent-teal;
-    border: 1px solid var.$color-border;
+    background: linear-gradient(135deg, var.$color-bg-paper-warm, rgba(var.$color-text-sepia, 0.15));
+    color: var.$color-text-sepia;
+    border: 1px solid rgba(var.$color-text-sepia, 0.15);
     padding: var.$spacing-2 var.$spacing-4;
     border-radius: var.$radius-md;
     font-size: var.$font-size-sm;
     font-weight: 600;
-    transition: var.$transition-normal;
+    transition: background-color 0.3s var.$ease-out, color 0.3s var.$ease-out, box-shadow 0.3s var.$ease-out, transform 0.3s var.$ease-out;
 
-    &:hover {
-      background: var.$color-accent-teal;
-      color: var.$color-bg-primary;
-      box-shadow: var.$shadow-glow;
-      transform: translateY(-2px);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background: var.$color-text-sepia;
+        color: var.$color-bg-paper;
+        box-shadow: var.$shadow-glow;
+        transform: translateY(-2px);
+      }
+    }
+
+    &:active {
+      transform: translateY(0) scale(0.97);
+      transition: transform 0.1s var.$ease-out;
     }
   }
 }

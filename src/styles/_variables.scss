@@ -1,18 +1,10 @@
-// Brand Colors (Harmonious, elegant palette with deep blues, teals, and subtle violet)
-$color-bg-primary: #0b0f19;      // Deep cosmic dark blue
-$color-bg-secondary: #131b2e;    // Dark slate blue for cards/containers
-$color-bg-tertiary: #1f2a45;     // Lighter accent container color
-$color-border: #233554;          // Border color for cards
-$color-border-glow: #64ffda;     // Glowing border color (emerald/teal)
-
-$color-text-primary: #f8fafc;    // Soft white
-$color-text-secondary: #94a3b8;  // Muted gray-blue
-$color-text-muted: #64748b;      // Darker gray-blue for minor details
-
-$color-accent-teal: #64ffda;     // Emerald/Teal highlight
-$color-accent-violet: #8b5cf6;   // Vibrant violet
-$color-accent-pink: #ec4899;     // Hot pink for gradients
-$color-accent-gold: #fbbf24;     // Soft gold
+// Brand Colors (Artisan Calligraphy Workshop Palette - Exactly 6 Colors)
+$color-bg-paper: #f9f6f1;             // Blanco de papel verjurado para fondos principales
+$color-bg-paper-warm: #f7eed6;        // Crema cálido para tarjetas y áreas secundarias
+$color-text-nogalina: #2c1d11;        // Tinta de nogalina profunda para textos principales
+$color-text-sepia: #5e4a3c;           // Sepia / tinta diluida para texto secundario, bordes y detalles
+$color-accent-cinnabar: #9b3d27;      // Rojo cinabrio tradicional para destaques y llamadas a la acción
+$color-accent-gold: #b38c4b;          // Oro antiguo para contrastes de firmas y perfil
 
 // Typography
 $font-sans: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
@@ -54,7 +46,13 @@ $shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.
 $shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 $shadow-glow: 0 0 15px rgba(100, 255, 218, 0.15);
 
+// Curve/Easings
+$ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+$ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
 // Transitions
-$transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-$transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-$transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+// NOTE: Prefer explicit properties (e.g. transition: transform 0.2s $ease-out)
+// instead of 'all' transitions to optimize rendering on the GPU.
+$transition-fast: all 0.15s $ease-out;
+$transition-normal: all 0.3s $ease-out;
+$transition-slow: all 0.5s $ease-out;

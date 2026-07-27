@@ -7,7 +7,7 @@
 
 .backBtn {
   @include mix.flex(flex-start, center, row, var.$spacing-2);
-  color: var.$color-accent-teal;
+  color: var.$color-text-sepia;
   font-size: var.$font-size-sm;
   font-weight: 600;
   transition: var.$transition-fast;
@@ -20,7 +20,7 @@
   }
 
   &:hover {
-    color: var.$color-text-primary;
+    color: var.$color-text-nogalina;
 
     svg {
       transform: translateX(-4px);
@@ -43,14 +43,14 @@
     font-size: var.$font-size-3xl;
     font-weight: 800;
     letter-spacing: -1px;
-    background: linear-gradient(135deg, var.$color-text-primary, var.$color-accent-teal);
+    background: linear-gradient(135deg, var.$color-text-nogalina, var.$color-text-sepia);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   p {
-    color: var.$color-text-secondary;
+    color: var.$color-text-sepia;
     font-size: var.$font-size-base;
   }
 }
@@ -58,10 +58,10 @@
 .errorState {
   @include mix.flex(center, center, column, var.$spacing-4);
   padding: var.$spacing-16 0;
-  color: var.$color-text-secondary;
+  color: var.$color-text-sepia;
 
   h3 {
-    color: var.$color-text-primary;
+    color: var.$color-text-nogalina;
     font-size: var.$font-size-2xl;
   }
 }
@@ -72,15 +72,15 @@
     -webkit-background-clip: initial;
     background-clip: initial;
     -webkit-text-fill-color: initial;
-    color: var.$color-text-primary;
+    color: var.$color-text-nogalina;
     font-family: 'Alegreya', serif;
   }
 
   .backBtn {
-    color: var.$color-text-secondary;
+    color: var.$color-text-sepia;
     
     &:hover {
-      color: #dfb15b;
+      color: var.$color-accent-gold;
     }
   }
 }

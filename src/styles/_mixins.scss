@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "variables" as var;
 
 // Flexbox & Grid layouts
 @mixin flex($justify: center, $align: center, $direction: row, $gap: 0) {
@@ -34,18 +35,18 @@ $breakpoints: (
   }
 }
 
-// Modern Glassmorphism effect
-@mixin glass($bg-opacity: 0.4, $blur: 12px, $border-opacity: 0.1) {
-  background: rgba(19, 27, 46, $bg-opacity);
+// Modern Glassmorphism effect (light cream theme)
+@mixin glass($bg-opacity: 0.4, $blur: 12px, $border-opacity: 0.08) {
+  background: rgba(var.$color-bg-paper-warm, $bg-opacity);
   backdrop-filter: blur($blur);
   -webkit-backdrop-filter: blur($blur);
-  border: 1px solid rgba(255, 255, 255, $border-opacity);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(var.$color-text-nogalina, $border-opacity);
+  box-shadow: 0 8px 32px 0 rgba(var.$color-text-nogalina, 0.05);
 }
 
-// Glow effect on hover
-@mixin glow-hover($color: #64ffda, $intensity: 0.3) {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+// Glow effect on hover (sepia/walnut ink glow)
+@mixin glow-hover($color: var.$color-text-sepia, $intensity: 0.15) {
+  transition: border-color 0.3s var.$ease-out, box-shadow 0.3s var.$ease-out;
   
   &:hover {
     box-shadow: 0 0 20px rgba($color, $intensity);

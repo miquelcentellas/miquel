@@ -15,7 +15,7 @@
     letter-spacing: -1px;
     
     span {
-      background-image: linear-gradient(135deg, var.$color-text-primary, var.$color-text-secondary);
+      background-image: linear-gradient(135deg, var.$color-text-nogalina, var.$color-text-sepia);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -24,21 +24,21 @@
   }
 
   p {
-    color: var.$color-text-secondary;
+    color: var.$color-text-sepia;
     font-size: var.$font-size-base;
   }
 }
 
 .all .intro h2 span {
-  background-image: linear-gradient(135deg, var.$color-accent-teal, var.$color-accent-violet);
+  background-image: linear-gradient(135deg, var.$color-text-sepia, var.$color-accent-cinnabar);
 }
 
 .development .intro h2 span {
-  background-image: linear-gradient(135deg, var.$color-text-primary, var.$color-accent-violet);
+  background-image: linear-gradient(135deg, var.$color-text-nogalina, var.$color-accent-cinnabar);
 }
 
 .design .intro h2 span {
-  background-image: linear-gradient(135deg, var.$color-text-primary, var.$color-accent-teal);
+  background-image: linear-gradient(135deg, var.$color-text-nogalina, var.$color-text-sepia);
 }
 
 .grid {
@@ -60,13 +60,13 @@
   @include mix.flex(center, center, column, var.$spacing-4);
   padding: var.$spacing-16 0;
   width: 100%;
-  color: var.$color-text-secondary;
+  color: var.$color-text-sepia;
   font-size: var.$font-size-lg;
 
   svg {
     width: 48px;
     height: 48px;
-    color: var.$color-text-muted;
+    color: var.$color-text-sepia;
     margin-bottom: var.$spacing-2;
   }
 }
