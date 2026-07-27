@@ -43,10 +43,7 @@
     font-size: var.$font-size-3xl;
     font-weight: 800;
     letter-spacing: -1px;
-    background: linear-gradient(135deg, var.$color-text-nogalina, var.$color-text-sepia);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var.$color-text-nogalina;
   }
 
   p {
@@ -68,10 +65,6 @@
 
 :global(.calligraphy) {
   .intro h2 {
-    background: none;
-    -webkit-background-clip: initial;
-    background-clip: initial;
-    -webkit-text-fill-color: initial;
     color: var.$color-text-nogalina;
     font-family: 'Alegreya', serif;
   }

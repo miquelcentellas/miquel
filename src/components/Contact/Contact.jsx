@@ -1,11 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Contact.module.scss'
 
 export default function Contact() {
-  const handleSubmit = (e) => {
+  const [status, setStatus] = useState('idle') // 'idle' | 'submitting' | 'success' | 'error'
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Logic for sending email would go here
-    alert("Mensaje enviado (simulado)")
+    setStatus('submitting')
+    
+    const formData = new FormData(e.target)
+    const name = formData.get('name')
+    const email = formData.get('email')
+    const message = formData.get('message')
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/miquelcentellas@hotmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          Nombre: name,
+          Email: email,
+          Mensaje: message,
+          _subject: `Nuevo mensaje de contacto en tu portafolio: ${name}`
+        })
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        e.target.reset()
+      } else {
+        // Fallback a mailto si falla la API
+        window.location.href = `mailto:miquelcentellas@hotmail.com?subject=Contacto: ${encodeURIComponent(name)}&body=${encodeURIComponent(message + '\n\nDe: ' + name + ' (' + email + ')')}`
+        setStatus('success')
+      }
+    } catch (err) {
+      // Fallback a mailto en caso de error de red
+      window.location.href = `mailto:miquelcentellas@hotmail.com?subject=Contacto: ${encodeURIComponent(name)}&body=${encodeURIComponent(message + '\n\nDe: ' + name + ' (' + email + ')')}`
+      setStatus('success')
+    }
   }
 
   return (
@@ -44,26 +79,44 @@ export default function Contact() {
         </div>
 
         <div className={styles.formColumn}>
-          <form className={styles.form} onSubmit={handleSubmit}>
-            <div className={styles.inputGroup}>
-              <label htmlFor="name">Nombre</label>
-              <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+          {status === 'success' ? (
+            <div className={styles.successMessage}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <h3>¡Mensaje enviado con éxito!</h3>
+              <p>Gracias por ponerte en contacto. Te responderé lo antes posible a tu dirección de correo.</p>
+              <button 
+                type="button" 
+                className={styles.submitBtn}
+                onClick={() => setStatus('idle')}
+                style={{ marginTop: '1rem' }}
+              >
+                Enviar otro mensaje
+              </button>
             </div>
+          ) : (
+            <form className={styles.form} onSubmit={handleSubmit}>
+              <div className={styles.inputGroup}>
+                <label htmlFor="name">Nombre</label>
+                <input type="text" id="name" name="name" placeholder="Tu nombre" required disabled={status === 'submitting'} />
+              </div>
 
-            <div className={styles.inputGroup}>
-              <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="tu@email.com" required />
-            </div>
+              <div className={styles.inputGroup}>
+                <label htmlFor="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required disabled={status === 'submitting'} />
+              </div>
 
-            <div className={styles.inputGroup}>
-              <label htmlFor="message">Mensaje</label>
-              <textarea id="message" name="message" rows="5" placeholder="¿En qué puedo ayudarte?" required></textarea>
-            </div>
+              <div className={styles.inputGroup}>
+                <label htmlFor="message">Mensaje</label>
+                <textarea id="message" name="message" rows="5" placeholder="¿En qué puedo ayudarte?" required disabled={status === 'submitting'}></textarea>
+              </div>
 
-            <button type="submit" className={styles.submitBtn}>
-              Enviar mensaje
-            </button>
-          </form>
+              <button type="submit" className={styles.submitBtn} disabled={status === 'submitting'}>
+                {status === 'submitting' ? 'Enviando...' : 'Enviar mensaje'}
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </section>

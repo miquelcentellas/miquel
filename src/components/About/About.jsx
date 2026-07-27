@@ -14,7 +14,7 @@ export default function About({ onCategoryChange }) {
   return (
     <section className={styles.container}>
       <div className={styles.intro}>
-        <h2><span>About me</span></h2>
+        <h2><span>Sobre mí</span></h2>
         <p className={styles.hook}>
           Soy un perfil híbrido que une la <strong>sensibilidad estética del diseño visual</strong> con la <strong>solidez técnica del desarrollo frontend</strong>. Creo experiencias digitales que no solo se ven increíbles, sino que funcionan a la perfección y son accesibles para todo el mundo.
         </p>

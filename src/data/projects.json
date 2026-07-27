@@ -3,7 +3,7 @@
     "id": "1",
     "title": "Aura Commerce Platform",
     "category": "development",
-    "description": "A high-performance, headless e-commerce store built with Next.js, GraphQL, and Stripe, utilizing edge-caching for sub-50ms page speeds.",
+    "description": "Una tienda e-commerce headless de alto rendimiento desarrollada con Next.js, GraphQL y Stripe, utilizando almacenamiento en caché en el borde para tiempos de carga inferiores a 50ms.",
     "tags": [
       "React",
       "Next.js",
@@ -24,16 +24,15 @@
   },
   {
     "id": "2",
-    "title": "Wedding Invitation",
+    "title": "Invitación de Boda",
     "category": "calligraphy",
-    "description": "A wedding invitation for a couple named Desiré and Antonio. It's a simple and elegant design with a focus on calligraphy and handwriting.",
+    "description": "Invitación de boda personalizada para Desiré y Antonio. Un diseño elegante y delicado enfocado en la caligrafía artística a mano.",
     "tags": [
-      "Paper",
-      "Envelope",
-      "Ink",
-      "Calligraphy",
-      "Handwriting",
-      "Love"
+      "Papel",
+      "Sobre",
+      "Tinta",
+      "Caligrafía",
+      "Escritura a mano"
     ],
     "link": "",
     "image": "/wedding-invitation-1.jpg",
@@ -49,7 +48,7 @@
     "id": "3",
     "title": "Gathering Hub Landing",
     "category": "development",
-    "description": "Landing prototype for a community Hub. For Artists, Creators, and Entrepenours. Keeping up the good vibes!",
+    "description": "Prototipo de página de aterrizaje para un hub comunitario destinado a artistas, creadores y emprendedores.",
     "tags": [
       "HTML",
       "CSS",
@@ -71,9 +70,9 @@
   },
   {
     "id": "4",
-    "title": "Chronos Productivity Engine",
+    "title": "Motor de Productividad Chronos",
     "category": "development",
-    "description": "A developer-focused keyboard-driven time tracking app with custom local SQLite database syncing and offline-first PWA sync strategies.",
+    "description": "Aplicación de seguimiento de tiempo para desarrolladores orientada a teclado, con base de datos SQLite local y arquitectura PWA offline-first.",
     "tags": [
       "React",
       "PWA",
@@ -89,14 +88,14 @@
   },
   {
     "id": "5",
-    "title": "Callygraphy Art",
+    "title": "Arte Caligráfico",
     "category": "calligraphy",
-    "description": "A carefully dedicated website for the subtle art of handwriting. Miquel Centellas has developed the art of handwritting, no only in paper, but also wood or even skin.",
+    "description": "Espacio dedicado al sutil arte de la escritura a mano. Miquel Centellas ha desarrollado la caligrafía artesanal no solo sobre papel, sino también sobre madera, grabado y superficies diversas.",
     "tags": [
-      "Paper",
-      "Pen",
-      "Ink",
-      "Calligraphy"
+      "Papel",
+      "Pluma",
+      "Tinta",
+      "Caligrafía"
     ],
     "link": "https://miquelcentellas.wixsite.com/caligrafo",
     "image": "/callygrapher.jpg",

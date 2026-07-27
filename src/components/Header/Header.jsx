@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from 'react'
 import styles from './Header.module.scss'
 
 const LOGOS = [
-  { id: 'copperplate', src: '/miquel-copperplate.svg', alt: 'Miquel Centellas - Copperplate' },
-  { id: 'carolina', src: '/miquel-carolina.svg', alt: 'Miquel Centellas - Carolina' },
-  { id: 'gotica', src: '/miquel-gotica.svg', alt: 'Miquel Centellas - Gótica' }
+  { id: 'copperplate', src: '/miquel-copperplate-cinnabar.svg', alt: 'Miquel Centellas - Copperplate' },
+  { id: 'carolina', src: '/miquel-carolina-cinnabar.svg', alt: 'Miquel Centellas - Carolina' },
+  { id: 'gotica', src: '/miquel-gotica-cinnabar.svg', alt: 'Miquel Centellas - Gótica' }
 ]
 
 const getDifferentRandomLogo = (currentId) => {
@@ -57,12 +57,12 @@ export default function Header({ currentCategory, onCategoryChange }) {
 
 
 
-      <div className={styles.currentDevelopment}>  ¡ Website under current development !</div>
+      <div className={styles.currentDevelopment}>  ¡ Sitio web en desarrollo !</div>
 
       <button
         className={styles.mobileMenuBtn}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        aria-label="Toggle menu"
+        aria-label="Menú principal"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
@@ -74,24 +74,24 @@ export default function Header({ currentCategory, onCategoryChange }) {
           className={`${styles.navLink} ${currentCategory === 'calligraphy' ? styles.active : ''}`}
           onClick={() => handleCategoryClick('calligraphy')}
         >
-          Calligraphy
+          Caligrafía
         </button>
         <button
           className={`${styles.navLink} ${currentCategory === 'about' ? styles.active : ''}`}
           onClick={() => handleCategoryClick('about')}
         >
-          About me
+          Sobre mí
         </button>
         <button
           className={`${styles.navLink} ${currentCategory === 'contact' ? styles.active : ''}`}
           onClick={() => handleCategoryClick('contact')}
         >
-          Contact
+          Contacto
         </button>
       </nav>
 
-      <button className={styles.cta}>
-        Let's Connect
+      <button className={styles.cta} onClick={() => handleCategoryClick('contact')}>
+        Contactar
       </button>
     </header>
   )

@@ -17,11 +17,7 @@
     letter-spacing: -1px;
     
     span {
-      background-image: linear-gradient(135deg, var.$color-text-nogalina, var.$color-text-sepia);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
+      color: var.$color-text-nogalina;
     }
   }
 
@@ -37,7 +33,7 @@
 
   .devCtaBtn {
     @include mix.flex(center, center, row, var.$spacing-2);
-    background: linear-gradient(135deg, var.$color-bg-paper-warm, rgba(var.$color-text-sepia, 0.15));
+    background-color: var.$color-bg-paper-warm;
     color: var.$color-text-sepia;
     border: 1px solid rgba(var.$color-text-sepia, 0.15);
     padding: var.$spacing-3 var.$spacing-6;

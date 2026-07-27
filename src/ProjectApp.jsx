@@ -21,14 +21,14 @@ export default function ProjectApp() {
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
           </svg>
-          Back to Projects
+          Volver a Proyectos
         </a>
 
         {project ? (
           <>
             <div className={styles.intro}>
-              <h2>Project Showcase</h2>
-              <p>Detailed view of this selected creation.</p>
+              <h2>Detalle del Proyecto</h2>
+              <p>Vista detallada de la obra seleccionada.</p>
             </div>
             
             <div className={styles.cardWrapper}>
@@ -37,8 +37,8 @@ export default function ProjectApp() {
           </>
         ) : (
           <div className={styles.errorState}>
-            <h3>Project Not Found</h3>
-            <p>The project you are looking for does not exist or has been removed.</p>
+            <h3>Proyecto no encontrado</h3>
+            <p>El proyecto que buscas no existe o ha sido movido.</p>
           </div>
         )}
       </main>

@@ -105,7 +105,7 @@ export default function Hero() {
         />
       </div>
       <div className={styles.scrollIndicator} style={interactionMode === 'scroll' ? { opacity: Math.max(1 - scrollProgress * 2, 0) } : {}}>
-        <span>Scroll to explore</span>
+        <span>Desplázate para explorar</span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>

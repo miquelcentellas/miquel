@@ -4,6 +4,7 @@ import ProjectList from './components/ProjectList/ProjectList'
 import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 import Hero from './components/Hero/Hero'
+import InkTrail from './components/InkTrail/InkTrail'
 import initialProjects from './data/projects.json'
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
 
   return (
     <div>
+      <InkTrail />
       <Header currentCategory={category} onCategoryChange={setCategory} />
       <main className="fadeInUp" key={category}>
         {category === 'about' ? (

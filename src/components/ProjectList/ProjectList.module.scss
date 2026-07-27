@@ -15,11 +15,7 @@
     letter-spacing: -1px;
     
     span {
-      background-image: linear-gradient(135deg, var.$color-text-nogalina, var.$color-text-sepia);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
+      color: var.$color-text-nogalina;
     }
   }
 
@@ -27,18 +23,6 @@
     color: var.$color-text-sepia;
     font-size: var.$font-size-base;
   }
-}
-
-.all .intro h2 span {
-  background-image: linear-gradient(135deg, var.$color-text-sepia, var.$color-accent-cinnabar);
-}
-
-.development .intro h2 span {
-  background-image: linear-gradient(135deg, var.$color-text-nogalina, var.$color-accent-cinnabar);
-}
-
-.design .intro h2 span {
-  background-image: linear-gradient(135deg, var.$color-text-nogalina, var.$color-text-sepia);
 }
 
 .grid {
