@@ -4,6 +4,7 @@ import ProjectList from './components/ProjectList/ProjectList'
 import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 import Hero from './components/Hero/Hero'
+import CTA from './components/CTA/CTA'
 import InkTrail from './components/InkTrail/InkTrail'
 import initialProjects from './data/projects.json'
 
@@ -29,7 +30,12 @@ export default function App() {
           <Contact />
         ) : (
           <>
-            {category === 'calligraphy' && <Hero />}
+            {category === 'calligraphy' && (
+              <>
+                <Hero />
+                <CTA onCategoryChange={setCategory} />
+              </>
+            )}
             <ProjectList projects={filteredProjects} category={category} />
           </>
         )}

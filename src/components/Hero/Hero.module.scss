@@ -2,10 +2,15 @@
   @include mix.flex(center, center, column);
   position: relative;
   width: 100%;
-  height: 80vh;
-  min-height: 500px;
+  height: 50vh;
+  min-height: 320px;
   overflow: hidden;
   background-color: var.$color-bg-paper;
+
+  @include mix.respond-to('md') {
+    height: 88vh;
+    min-height: 500px;
+  }
 }
 
 .svgWrapper {

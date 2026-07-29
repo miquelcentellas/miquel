@@ -1,0 +1,101 @@
+.ctaSection {
+  width: 100%;
+  background-color: var.$color-bg-paper-warm;
+  padding: var.$spacing-8 var.$spacing-4;
+
+  @include mix.respond-to('md') {
+    
+  }
+}
+
+.container {
+  max-width: 1200px;
+  padding: 48px 32px;
+  margin: 0 auto;
+  @include mix.flex(center, center, column, var.$spacing-8);
+
+  @include mix.respond-to('md') {
+    @include mix.flex(space-between, center, row, var.$spacing-12);
+  }
+}
+
+.imageWrapper {
+  width: 100%;
+  max-width: 520px;
+  border-radius: var.$radius-sm;
+  overflow: hidden;
+  box-shadow: var.$shadow-md;
+
+  @include mix.respond-to('md') {
+    flex: 1 1 50%;
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.content {
+  width: 100%;
+  @include mix.flex(center, flex-start, column, var.$spacing-4);
+
+  @include mix.respond-to('md') {
+    flex: 1 1 50%;
+  }
+}
+
+.title {
+  font-family: var.$font-serif;
+  font-size: clamp(1.75rem, 3.5vw, 3.6rem);
+  font-weight: 800;
+  color: var.$color-text-sepia;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}
+
+.subtitle {
+  font-family: var.$font-sans;
+  font-size: clamp(1.1rem, 2vw, 2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var.$color-text-sepia;
+  margin-bottom: var.$spacing-2;
+
+  br {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+
+.button {
+  margin-top: var.$spacing-2;
+  background-color: var.$color-accent-cinnabar;
+  color: var.$color-bg-paper;
+  border: none;
+  border-radius: var.$radius-md;
+  padding: var.$spacing-3 var.$spacing-6;
+  font-size: var.$font-size-base;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: transform 0.3s var.$ease-out, box-shadow 0.3s var.$ease-out, opacity 0.3s var.$ease-out;
+  align-self: flex-start;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: var.$shadow-glow;
+      opacity: 0.9;
+    }
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.97);
+    transition: transform 0.1s var.$ease-out;
+  }
+}
