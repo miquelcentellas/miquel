@@ -14,7 +14,6 @@
   h2 {
     font-size: var.$font-size-3xl;
     font-weight: 800;
-    letter-spacing: -1px;
     
     span {
       color: var.$color-text-nogalina;
@@ -52,7 +51,7 @@
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
-        background: var.$color-text-sepia;
+        background: var.$color-accent-cinnabar;
         color: var.$color-bg-paper;
         box-shadow: var.$shadow-glow;
         transform: translateY(-2px);
@@ -85,8 +84,8 @@
 
   p {
     color: var.$color-text-sepia;
-    font-size: var.$font-size-base;
-    line-height: 1.7;
+    font-size: var.$font-size-xl;
+    line-height: 1.6;
     margin-bottom: var.$spacing-4;
 
     &:last-child {
@@ -96,10 +95,24 @@
 }
 
 .skills {
+  @include mix.flex(flex-start, stretch, column, var.$spacing-8);
+
   h3 {
     font-size: var.$font-size-2xl;
     color: var.$color-text-nogalina;
-    margin-bottom: var.$spacing-6;
+    margin-bottom: var.$spacing-2;
+  }
+
+  .skillsGroup {
+    @include mix.flex(flex-start, stretch, column, var.$spacing-4);
+  }
+
+  .groupTitle {
+    font-size: var.$font-size-xl;
+    color: var.$color-text-sepia;
+    font-weight: 600;
+    border-left: 3px solid var.$color-accent-cinnabar;
+    padding-left: var.$spacing-3;
   }
 
   .grid {

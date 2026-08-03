@@ -53,7 +53,7 @@ export default function Contact() {
       <div className={styles.content}>
         <div className={styles.profileColumn}>
           <div className={styles.imageContainer}>
-            <img src="/profile.jpg" alt="Miquel Centellas" className={styles.profileImage} />
+            <img src="/profile-2.png" alt="Miquel Centellas" className={styles.profileImage} />
           </div>
           <div className={styles.socials}>
             <h3>Conecta conmigo</h3>
