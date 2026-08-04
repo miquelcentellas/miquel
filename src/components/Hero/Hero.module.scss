@@ -1,15 +1,19 @@
 .hero {
-  @include mix.flex(center, center, column);
+  @include mix.flex(center, center, column, var.$spacing-2);
   position: relative;
   width: 100%;
-  height: 50vh;
-  min-height: 320px;
+  height: auto;
+  min-height: auto;
+  padding: var.$spacing-4 0;
   overflow: hidden;
   background-color: var.$color-bg-paper;
 
-  @include mix.respond-to('md') {
+  @include mix.respond-to('sm') {
     height: 88vh;
     min-height: 500px;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
   }
 }
 
@@ -17,8 +21,36 @@
   position: relative;
   width: 100%;
   max-width: 100%;
-  aspect-ratio: 397.5 / 102; // SVG viewBox ratio
   @include mix.flex(center, center);
+}
+
+.desktopWrapper {
+  display: none;
+  aspect-ratio: 397.5 / 102;
+
+  @include mix.respond-to('sm') {
+    @include mix.flex(center, center);
+  }
+}
+
+.mobileContainer {
+  width: 100%;
+  padding: 100px var.$spacing-4;
+  @include mix.flex(center, center, column, -1.5rem);
+
+  @include mix.respond-to('sm') {
+    display: none;
+  }
+}
+
+.mobileWrapperMiquel {
+  aspect-ratio: 227.858 / 70;
+  margin-top: -1rem;
+}
+
+.mobileWrapperCentellas {
+  aspect-ratio: 226.917 / 60;
+  margin-bottom: -1rem;
 }
 
 .svgImage {
@@ -40,6 +72,44 @@
   animation: writeLogo 6s linear forwards;
 }
 
+.svgImageMobileMiquel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-mask-image: url('/mobile-miquel-copperplate.svg');
+  mask-image: url('/mobile-miquel-copperplate.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  background-color: var.$color-accent-gold;
+  clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+  animation: writeLogo 6s linear forwards;
+}
+
+.svgImageMobileCentellas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-mask-image: url('/mobile-centellas-copperplate.svg');
+  mask-image: url('/mobile-centellas-copperplate.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  background-color: var.$color-accent-gold;
+  clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+  animation: writeLogo 6s linear forwards;
+}
+
 .svgImageBg {
   opacity: 0.15;
   clip-path: none !important;
@@ -49,14 +119,20 @@
 
 
 .scrollIndicator {
-  position: absolute;
-  bottom: var.$spacing-8;
+  position: relative;
+  margin-top: var.$spacing-4;
   @include mix.flex(center, center, column, var.$spacing-2);
   color: var.$color-text-sepia;
   font-size: var.$font-size-sm;
   font-family: var.$font-sans;
   opacity: 0;
   animation: fadeInIndicator 0.8s var.$ease-out 1s forwards;
+
+  @include mix.respond-to('sm') {
+    position: absolute;
+    bottom: var.$spacing-8;
+    margin-top: 0;
+  }
 
   svg {
     width: 20px;

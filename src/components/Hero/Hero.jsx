@@ -92,18 +92,45 @@ export default function Hero() {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <div className={styles.svgWrapper}>
-        {/* Background watermark layer (15% opacity, always fully revealed) */}
+      {/* Desktop SVG Wrapper */}
+      <div className={`${styles.svgWrapper} ${styles.desktopWrapper}`}>
+        {/* Background watermark layer */}
         <div
           className={`${styles.svgImage} ${styles.svgImageBg}`}
           style={{ backgroundColor: bgColor }}
         />
-        {/* Foreground revealed layer (fully opaque, clipped dynamically) */}
+        {/* Foreground revealed layer */}
         <div
           className={styles.svgImage}
           style={svgStyle}
         />
       </div>
+
+      {/* Mobile SVG Container (break-point sm & inferior) */}
+      <div className={`${styles.mobileContainer}`}>
+        <div className={`${styles.svgWrapper} ${styles.mobileWrapperMiquel}`}>
+          <div
+            className={`${styles.svgImageMobileMiquel} ${styles.svgImageBg}`}
+            style={{ backgroundColor: bgColor }}
+          />
+          <div
+            className={styles.svgImageMobileMiquel}
+            style={svgStyle}
+          />
+        </div>
+
+        <div className={`${styles.svgWrapper} ${styles.mobileWrapperCentellas}`}>
+          <div
+            className={`${styles.svgImageMobileCentellas} ${styles.svgImageBg}`}
+            style={{ backgroundColor: bgColor }}
+          />
+          <div
+            className={styles.svgImageMobileCentellas}
+            style={svgStyle}
+          />
+        </div>
+      </div>
+
       <div className={styles.scrollIndicator} style={interactionMode === 'scroll' ? { opacity: Math.max(1 - scrollProgress * 2, 0) } : {}}>
         <span>Desplázate para explorar</span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
