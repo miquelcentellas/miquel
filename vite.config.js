@@ -27,8 +27,8 @@ export default defineConfig({
     },
   },
   build: {
-    target: 'es2020',
-    cssTarget: 'chrome80',
+    target: ['chrome80', 'safari13.1', 'firefox75', 'edge80'],
+    cssTarget: ['chrome80', 'safari13.1', 'firefox75', 'edge80'],
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
