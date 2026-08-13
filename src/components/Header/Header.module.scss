@@ -84,7 +84,7 @@
   top: 100%;
   left: 0;
   right: 0;
-  background-color: var.$color-bg-paper;
+  @include mix.glass(0.6, 16px, 0.08);
   padding: var.$spacing-6 var.$spacing-4;
   border-bottom: 1px solid rgba(var.$color-text-sepia, 0.15);
   box-shadow: var.$shadow-lg;
@@ -108,9 +108,11 @@
     @include mix.flex(center, center, row, var.$spacing-6);
     position: static;
     background: transparent;
-    padding: 0;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     border: none;
     box-shadow: none;
+    padding: 0;
     
     // Reset mobile transitions on desktop
     opacity: 1;
