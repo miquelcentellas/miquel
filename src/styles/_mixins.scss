@@ -38,8 +38,8 @@ $breakpoints: (
 // Modern Glassmorphism effect (light cream theme)
 @mixin glass($bg-opacity: 0.4, $blur: 12px, $border-opacity: 0.08) {
   background: rgba(var.$color-bg-paper-warm, $bg-opacity);
-  backdrop-filter: blur($blur);
   -webkit-backdrop-filter: blur($blur);
+  backdrop-filter: blur($blur);
   border: 1px solid rgba(var.$color-text-nogalina, $border-opacity);
   box-shadow: 0 8px 32px 0 rgba(var.$color-text-nogalina, 0.05);
 }
